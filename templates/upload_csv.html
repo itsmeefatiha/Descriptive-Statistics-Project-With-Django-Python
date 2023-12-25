@@ -1,0 +1,23 @@
+ 
+ <!DOCTYPE html>
+<html>
+<head>
+    <title>Upload CSV</title>
+</head>
+<body>
+    
+    <h1>Upload a CSV file</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="csv_url">CSV file URL:</label>
+        <input type="text" name="csv_url" id="csv_url">
+        <input type="submit" value="Upload">
+    </form>
+    {% if html_table %}
+        <h2>CSV data:</h2>
+        <table class="table">
+        {{ html_table|safe }}
+    </table>
+    {% endif %}
+</body>
+</html>

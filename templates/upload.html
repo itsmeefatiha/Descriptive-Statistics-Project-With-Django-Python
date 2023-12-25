@@ -1,0 +1,9 @@
+<h1>Upload File</h1>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="file" name="csv-file" required>
+        <input type="text" name="column_x" required>
+        <input type="text" name="column_y" required>
+    
+    <button type="submit" class="btn btn-primary">Upload</button>
+</form>

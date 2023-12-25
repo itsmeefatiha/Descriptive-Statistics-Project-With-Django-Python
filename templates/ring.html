@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Bar Chart</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style type="text/css">
+body{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    position: absolute;
+    text-align:justify;
+}
+center{
+    text-align: center;
+}
+h1{
+    color: #ff695f;
+}
+.chartbox {
+    width: 15cm;
+    height: 7cm;
+
+    
+}
+.retour {
+    position: fixed;
+}
+.retour a {
+  display: inline-block;
+  font-size: 2px;
+  font-weight: 100;
+  color: #ff695f;
+  text-transform: capitalize;
+  padding: 12px 25px;
+  border-radius: 0px;
+  letter-spacing: 0.25px;
+}
+
+.retour a {
+  display: inline-block;
+  font-size: 2px;
+  font-weight: 100;
+  color: #ff695f;
+  text-transform: capitalize;
+  padding: 12px 25px;
+  border-radius: 0px;
+  letter-spacing: 0.25px;
+  transition: all .3s;
+}
+
+.section-heading  h2 {
+ color: #ff695f;
+ padding-top: 1cm;
+}
+.section-heading  span {
+ color: #03a4ed;
+ padding-top: 1cm;
+}
+
+.section-heading  p {
+ text-align: justify;
+ padding-left: 2cm;
+ padding-right: 2cm;
+}
+</style>
+  </head>
+
+  <body>
+    <div class="retour">
+    <a onclick="history.back()"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="30" fill="currentColor" class="bi bi-arrow-return-left" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z"/>
+      </svg></a></div>
+      
+      <div class="section-heading">
+ <center><h2 >graphique<span> en</span> anneau</h2>
+<p>Un doughnut chart est un type de graphique circulaire qui ressemble à un anneau. Comme un pie chart, il est utile pour visualiser les proportions relatives de différentes catégories de données, mais il permet également d'ajouter une deuxième dimension en affichant des données sous forme d'anneaux concentriques.</p>
+<br/><div class="chartbox" style='margin-left: 500px;'>
+    <canvas id="doughnutGraph"></canvas></div>
+
+    <script>
+      var data = {
+			labels: ["300", "50", "100"],
+			datasets: [{
+				data: [300, 50, 100],
+				backgroundColor: [
+					"rgba(255, 99, 132, 0.5)",
+					"#ff695f",
+					"#03a4ed"
+				],
+				borderColor: [
+					"rgba(255, 99, 132, 1)",
+					"#ff695f",
+					"#03a4ed"
+				],
+				borderWidth: 1
+			}]
+		};
+
+		// options pour le graphique
+		var options = {
+			responsive: true,
+			title: {
+				display: true,
+				text: "Exemple de Doughnut Graph"
+			},
+			legend: {
+				display: true,
+				position: "bottom"
+			}
+		};
+
+		// création du graphique
+		var doughnutGraph = new Chart(document.getElementById("doughnutGraph"), {
+			type: "doughnut",
+			data: data,
+			options: options
+		});
+    </script>
+    <h2>Création <span>d'un graphique</span> en anneau</h2>
+    
+   <p> La création d'un doughnut graph peut se faire avec l'utilisation d'une bibliothèque de visualisation de données comme Chart.js. Les données doivent être formatées dans un tableau, avec les labels pour chaque segment et les valeurs correspondantes. Ensuite, il suffit de définir les options de personnalisation du graphique, telles que le titre, la couleur, la taille, etc.</p>
+<h2>Interprétation d'un <span>graphique en </span>anneau</h2>
+    <p>
+        L'interprétation d'un doughnut graph est similaire à celle d'un pie chart, en ce sens que les proportions relatives de chaque segment du graphique peuvent être facilement comparées visuellement. Cependant, l'ajout de segments concentriques permet de visualiser une deuxième dimension de données, tels que les variations dans une série de données au fil du temps ou la contribution relative de différentes variables à un ensemble de données.
+    </p>
+   <h2>Conclusion</h2> 
+    <p>
+        En conclusion, les doughnut charts sont un moyen efficace de visualiser les proportions relatives de différentes catégories de données tout en ajoutant une deuxième dimension de données. Bien que la création de ces graphiques puisse nécessiter une certaine expérience en matière de visualisation de données et de programmation, l'utilisation de bibliothèques de visualisation de données telles que Chart.js facilite grandement la création de ces graphiques.</p>
+  </p></center>
+</div>
+  </body>
+</html>

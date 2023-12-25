@@ -1,0 +1,45 @@
+
+
+{% block content %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+<script>
+    document.querySelector('form').addEventListener('submit', (event) => {
+        event.preventDefault();
+        fetch('{% url "bar_chart" %}', {
+            method: 'POST',
+            body: new FormData(event.target)
+        }).then(response => response.json())
+        .then(data => {
+            const labels = data[data.columns[0]];
+            const datasets = [];
+            data.columns.slice(1).forEach(column => {
+                datasets.push({
+                    label: column,
+                    data: data[column],
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    borderWidth: 1
+                });
+            });
+            const ctx = document.getElementById('myChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: datasets
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            });
+        });
+    });
+</script>
+
+{% endblock %}

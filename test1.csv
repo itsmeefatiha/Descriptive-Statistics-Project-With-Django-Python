@@ -1,0 +1,85 @@
+id	,name,	country_id	,population
+1	,Tokyo,         28	,36923000
+2	,Shanghai,	13	,34000000
+3	,Jakarta,	19	,30000000
+4	,Seoul,	        21	,25514000
+5	,Guangzhou,	13	,25000000
+6	,Beijing,	13	,24900000
+7	,Karachi,	22	,24300000
+8	,Shenzhen,	13	,23300000
+9	,Delhi,         25	,21753486
+10	,Mexico City,	24	,21339781
+11	,Lagos,	         9	,21000000
+12	,São Paulo,	 1	,20935204
+13	,Mumbai,        25	,20748395
+14	,New York City,	20	,20092883
+15	,Osaka,	        28	,19342000
+16	,Wuhan,	        13	,19000000
+17	,Chengdu,       13	,18100000
+18	,Dhaka,	         4	,17151925
+19	,Chongqing,	13	,17000000
+20	,Tianjin,       13	,15400000
+21	,Kolkata,       25	,14617882
+22	,Tehran,        11	,14595904
+23	,Istanbul,	 2	,14377018
+24	,London,        26	,14031830
+25	,Hangzhou,	13	,13400000
+26	,Los Angeles,	20	,13262220
+27	,Buenos Aires,	 8	,13074000
+28	,Xi'an,	        13	,12900000
+29	,Paris,	         6	,12405426
+30	,Changzhou,	13	,12400000
+31	,Shantou,       13	,12000000
+32	,RiodeJaneiro, 	 1	,11973505
+33	,Manila,        18	,11855975
+34	,Nanjing,       13	,11700000
+35	,Rhine-Ruhr,	16	,11470000
+36	,Jinan,	        13	,11000000
+37	,Bangalore,	25	,10576167
+38	,Harbin,        13	,10500000
+39	,Lima,	         7	,9886647
+40	,Zhengzhou,	13	,9700000
+41	,Qingdao,       13	,9600000
+42	,Chicago, 	20	,9554598
+43	,Nagoya,        28	,9107000
+44	,Chennai,  	25	,8917749
+45	,Bangkok,       15	,8305218
+46	,Bogotá,        27	,7878783
+47	,Hyderabad,	25	,7749334
+48	,Shenyang,	13	,7700000
+49	,Wenzhou,       13	,7600000
+50	,Nanchang,	13	,7400000
+51	,Hong Kong,	13	,7298600
+52	,Taipei,        29	,7045488
+53	,Dallas–Fort,	20	,6954330
+54	,Santiago,	14	,6683852
+55	,Luanda,        23	,6542944
+56	,Houston,       20	,6490180
+57	,Madrid,        17	,6378297
+58	,Ahmedabad,	25	,6352254
+59	,Toronto,        5	,6055724
+60	,Philadelphia,	20	,6051170
+61	,WashingtonD.C,	20	,6033737
+62	,Miami,	        20	,5929819
+63	,BeloHorizonte,	 1	,5767414
+64	,Atlanta,       20	,5614323
+65	,Singapore,	12	,5535000
+66	,Barcelona,	17	,5445616
+67	,Munich,      	16	,5203738
+68	,Stuttgart,	16	,5200000
+69	,Ankara,         2	,5150072
+70	,Hamburg,       16	,5100000
+71	,Pune,	        25	,5049968
+72	,Berlin,        16	,5005216
+73	,Guadalajara,	24	,4796050
+74	,Boston,        20	,4732161
+75	,Sydney,        10	,5000500
+76	,San Francisco,	20	,4594060
+77	,Surat,	        25	,4585367
+78	,Phoenix,     	20	,4489109
+79	,Monterrey,	24	,4477614
+80	,Inland Empire,	20	,4441890
+81	,Rome,	         3	,4321244
+82	,Detroit,	20	,4296611
+83	,Milan,	         3	,4267946
+84	,Melbourne,	10	,4650000

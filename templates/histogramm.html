@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Bar Chart</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style type="text/css">
+body{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    position: absolute;
+    text-align:justify;
+}
+center{
+    text-align: center;
+}
+h1{
+    color: #ff695f;
+}
+.chartbox {
+    width: 15cm;
+    height: 7cm;
+
+    
+}
+.retour {
+    position: fixed;
+}
+.retour a {
+  display: inline-block;
+  font-size: 2px;
+  font-weight: 100;
+  color: #ff695f;
+  text-transform: capitalize;
+  padding: 12px 25px;
+  border-radius: 0px;
+  letter-spacing: 0.25px;
+}
+
+.retour a {
+  display: inline-block;
+  font-size: 2px;
+  font-weight: 100;
+  color: #ff695f;
+  text-transform: capitalize;
+  padding: 12px 25px;
+  border-radius: 0px;
+  letter-spacing: 0.25px;
+  transition: all .3s;
+}
+
+.section-heading  h2 {
+ color: #ff695f;
+ padding-top: 1cm;
+}
+.section-heading  span {
+ color: #03a4ed;
+ padding-top: 1cm;
+}
+
+.section-heading  p {
+ text-align: justify;
+ padding-left: 2cm;
+ padding-right: 2cm;
+}
+</style>
+  </head>
+
+  <body>
+    <div class="retour">
+    <a onclick="history.back()"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="30" fill="currentColor" class="bi bi-arrow-return-left" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z"/>
+      </svg></a></div>
+      
+      <div class="section-heading">
+ <center><h2 >graphique<span> à</span> barres</h2>
+<p>Les graphiques en barres sont un moyen populaire d'afficher des données sous forme graphique. Ils sont utiles pour comparer des données entre des catégories et pour montrer des tendances au fil du temps. Un graphique en barres se compose d'une série de barres qui représentent les valeurs d'un ensemble de données. Chaque barre est proportionnelle à la valeur qu'elle représente. Dans cette page de documentation, nous discuterons des bases des graphiques en barres et de la façon de les créer et de les interpréter.</p>
+<br/><div class="chartbox" style="margin: 0 auto;">
+    <canvas id="myChart"></canvas></div>
+
+    <script>
+      var ctx = document.getElementById('myChart').getContext('2d');
+      var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['', '', '', '', '', '', ''],
+          datasets: [{
+            label: 'Bar Chart',
+            data: [12, 19, 3, 5, 2, 3, 12],
+            backgroundColor: '#ff695f',
+            borderColor: '#ff695f',
+            borderWidth: 1
+          }]
+        },
+        options: {
+          scales: {
+            yAxes: [{
+              ticks: {
+                beginAtZero: true
+              }
+            }]
+          }
+        }
+      });
+    </script>
+    <h2>Création <span>d'un graphique</span> en barres</h2>
+    
+   <p> Pour créer un graphique en barres, vous devez d'abord disposer d'un ensemble de données. Les données peuvent être de n'importe quel format, mais elles doivent être organisées en catégories. Par exemple, vous pourriez avoir un ensemble de données de ventes pour différents produits ou un ensemble de données de scores de tests pour différents étudiants.
+    
+    Une fois que vous avez vos données, vous pouvez créer un graphique en barres à l'aide d'un outil ou d'un logiciel de graphique. La plupart des outils de graphique ont une fonction intégrée pour créer des graphiques en barres. Il suffit de sélectionner les données que vous voulez utiliser et de choisir l'option de graphique en barres.
+    </p>
+<h2>Interprétation d'un <span>graphique en </span>barres</h2>
+    <p>
+    L'axe des x d'un graphique en barres représente les catégories, et l'axe des y représente les valeurs. Chaque barre représente la valeur d'une catégorie particulière. La hauteur de la barre correspond à la valeur qu'elle représente. Les barres peuvent être orientées horizontalement ou verticalement, en fonction de la préférence de l'utilisateur.
+    
+    Lors de l'interprétation d'un graphique en barres, vous devez rechercher des tendances ou des motifs dans les données. Par exemple, y a-t-il des catégories avec des valeurs significativement plus élevées que d'autres ? Y a-t-il des catégories avec des valeurs constamment faibles ? Y a-t-il des catégories qui ont changé de manière significative au fil du temps ?
+    
+    De plus, vous pouvez utiliser un graphique en barres pour comparer des valeurs entre des catégories. Par exemple, vous pouvez comparer les ventes de différents produits ou les scores de tests de différents étudiants. Vous pouvez également utiliser un graphique en barres pour montrer les tailles relatives de différentes catégories. Par exemple, vous pouvez montrer la population de différents pays ou la répartition de différents groupes d'âge.
+    </p>
+   <h2>Conclusion</h2> 
+    <p>
+    Les graphiques en barres sont un moyen simple et efficace d'afficher des données sous forme graphique. Ils sont faciles à créer et à interpréter et sont utiles pour comparer des données entre des catégories et montrer des tendances au fil du temps. Lors de la création d'un graphique en barres, il est important d'organiser vos données en catégories et de choisir l'orientation appropriée pour le graphique. Lors de l'interprétation d'un graphique en barres, recherchez des tendances ou des motifs dans les données et utilisez le graphique pour comparer des valeurs entre des catégories ou montrer les tailles relatives de différentes catégories.</p>
+  </p></center>
+</div>
+  </body>
+</html>

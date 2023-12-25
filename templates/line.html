@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Bar Chart</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style type="text/css">
+body{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    position: absolute;
+    text-align:justify;
+}
+center{
+    text-align: center;
+}
+h1{
+    color: #ff695f;
+}
+.chartbox {
+    width: 15cm;
+    height: 7cm;
+
+    
+}
+.retour {
+    position: fixed;
+}
+.retour a {
+  display: inline-block;
+  font-size: 2px;
+  font-weight: 100;
+  color: #ff695f;
+  text-transform: capitalize;
+  padding: 12px 25px;
+  border-radius: 0px;
+  letter-spacing: 0.25px;
+}
+
+.retour a {
+  display: inline-block;
+  font-size: 2px;
+  font-weight: 100;
+  color: #ff695f;
+  text-transform: capitalize;
+  padding: 12px 25px;
+  border-radius: 0px;
+  letter-spacing: 0.25px;
+  transition: all .3s;
+}
+
+.section-heading  h2 {
+ color: #ff695f;
+ padding-top: 1cm;
+}
+.section-heading  span {
+ color: #03a4ed;
+ padding-top: 1cm;
+}
+
+.section-heading  p {
+ text-align: justify;
+ padding-left: 2cm;
+ padding-right: 2cm;
+}
+</style>
+  </head>
+
+  <body>
+    <div class="retour">
+    <a onclick="history.back()"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="30" fill="currentColor" class="bi bi-arrow-return-left" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z"/>
+      </svg></a></div>
+      
+      <div class="section-heading">
+ <center><h2 >graphique<span> linéaires</span> </h2>
+<p>Les graphiques linéaires (ou line charts en anglais) sont un type de graphique qui représente des données en utilisant des lignes droites pour relier les points de données. Les graphiques linéaires sont particulièrement utiles pour montrer l'évolution d'une série de données sur une période de temps donnée. Ils peuvent également être utilisés pour montrer les tendances, les fluctuations et les relations entre les données.</p>
+<br/><div class="chartbox" style="margin: 0 auto;">
+    <canvas id="myChart"></canvas></div>
+
+    <script>
+      var ctx = document.getElementById('myChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['', '', '', '', '', ''],
+        datasets: [{
+          label: 'Line Chart',
+          data: [12, 19, 3, 5, 2, 3],
+          backgroundColor: 'rgba(255, 99, 132, 0.2)',
+          borderColor: 'rgba(255, 99, 132, 1)',
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          yAxes: [{
+            ticks: {
+              beginAtZero: true
+            }
+          }]
+        }
+      }
+    });
+    </script>
+    <h2>Création <span>d'un graphique</span> linéaire</h2>
+    
+   <p> Pour créer un graphique linéaire, vous devez d'abord avoir un ensemble de données qui représentent une série de valeurs sur une période de temps. Les données peuvent être organisées de différentes manières, par exemple, en fonction du temps, de la position géographique ou de l'âge. Une fois que vous avez vos données, vous pouvez créer un graphique linéaire à l'aide d'un outil ou d'un logiciel de graphique. La plupart des outils de graphique ont une fonction intégrée pour créer des graphiques linéaires. Il suffit de sélectionner les données que vous voulez utiliser et de choisir l'option de graphique linéaire.
+    </p>
+<h2>Interprétation d'un <span>graphique </span> linéaire</h2>
+    <p>
+        Le graphique linéaire est construit en reliant les points de données par des lignes droites, de sorte que chaque point représente la valeur de la série de données à un moment donné. L'axe horizontal représente la période de temps, tandis que l'axe vertical représente la valeur des données. Les données peuvent être exprimées en termes absolus ou relatifs.</p>
+   <h2>Conclusion</h2> 
+    <p>
+        Les graphiques linéaires sont un outil précieux pour représenter graphiquement une série de données sur une période de temps donnée. Ils permettent de mettre en évidence les tendances, les fluctuations et les relations entre les données. Lors de l'interprétation d'un graphique linéaire, il est important de rechercher des tendances et des motifs dans les données afin de comprendre le comportement de la série de données. Les graphiques linéaires peuvent également être utilisés pour comparer les valeurs de différentes séries de données, ce qui peut aider à détecter les corrélations entre celles-ci.</p>
+  </p></center>
+</div>
+  </body>
+</html>

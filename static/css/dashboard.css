@@ -1,0 +1,138 @@
+body {
+    font-size: .875rem;
+  }
+  
+  .feather {
+    width: 16px;
+    height: 16px;
+    vertical-align: text-bottom;
+  }
+  
+  /*
+   * Sidebar
+   */
+  
+  .sidebar {
+    position: fixed;
+    top: 0;
+    /* rtl:raw:
+    right: 0;
+    */
+    bottom: 0;
+    /* rtl:remove */
+    left: 0;
+    z-index: 100; /* Behind the navbar */
+    padding: 48px 0 0; /* Height of navbar */
+    
+  }
+  
+  @media (max-width: 767.98px) {
+    .sidebar {
+      top: 5rem;
+    }
+  }
+  
+  .sidebar-sticky {
+    position: relative;
+    top: 0;
+    height: calc(100vh - 48px);
+    padding-top: .5rem;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+  }
+  
+  .sidebar .nav-link {
+    font-weight: 500;
+    color: #ff695f;
+  }
+  
+  .sidebar .nav-link .feather {
+    margin-right: 5px;
+    color:#ff695f; ;
+  }
+  
+  .sidebar .nav-link.active {
+    color: #fff;
+  }
+  
+  .sidebar .nav-link:hover .feather,
+  .sidebar .nav-link.active .feather {
+    color: inherit;
+  }
+  
+  .sidebar-heading {
+    font-size: .75rem;
+    text-transform: uppercase;
+  }
+  
+  /*
+   * Navbar
+   */
+  
+  .navbar-brand {
+    height: 60px; ;
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+    font-size: 1rem;
+    background-color:#ff695f;
+    box-shadow: inset -1px 0 0 #ffff;
+  }
+  
+  .navbar .navbar-toggler {
+    top: .25rem;
+    right: 1rem;
+  }
+  
+  .navbar .form-control {
+    padding: .75rem 1rem;
+    border-width: 0;
+    border-radius: 0;
+  }
+  
+  .form-control-dark {
+    color: #fff;
+    background-color:#fff ;
+   
+  }
+  
+  .form-control-dark:focus {
+    border-color: transparent;
+ 
+  }
+  .main-red-button input{
+    display: inline-block;
+    background-color: #ff695f;
+    font-size: 20px;
+    font-weight: 500px;
+    color: #fff;
+    text-transform: capitalize;
+    padding: 12px 25px;
+    border-radius: 0px;
+    letter-spacing: 0.25px;
+  }
+  
+  .main-red-button-hover input {
+    display: inline-block;
+    background-color: #fff;
+    font-size: 10px;
+    font-weight: 500px;
+    color:  #ff695f;
+    text-transform: capitalize;
+    padding: 12px 25px;
+    border-radius: 20%;
+    letter-spacing: 0.25px;
+    transition: all .3s;
+  }
+  
+  .main-red-button-hover input:hover {
+    background-color: #595e60;
+  }
+  .box {
+    width: 250px;
+    height:170px;
+    margin: 10px;
+    padding: 25px;
+   
+    border-radius: 10%;
+    background-color: rgb(235, 232, 232);
+  }

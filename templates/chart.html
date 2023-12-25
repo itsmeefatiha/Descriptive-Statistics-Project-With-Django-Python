@@ -1,0 +1,36 @@
+
+
+
+<h1>Bar Chart</h1>
+<canvas id="myChart"></canvas>
+
+
+{% block javascript %}
+<script src="{% static 'js/chart.js' %}"></script>
+<script>
+var chartData = {{ chart_data|safe }};
+var ctx = document.getElementById('myChart').getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: chartData.labels,
+        datasets: [{
+            label: 'Count',
+            data: chartData.values,
+            backgroundColor: 'rgba(255, 99, 132, 0.2)',
+            borderColor: 'rgba(255, 99, 132, 1)',
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+</script>
+{% endblock javascript %}

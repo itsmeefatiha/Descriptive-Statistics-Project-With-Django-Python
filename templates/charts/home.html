@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload CSV file</title>
+</head>
+<body>
+    <h1>Upload a CSV file</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="csv_file">
+        <br>
+        <label>Select columns:</label>
+        <label for="input_column_name">Input column name:</label>
+        <input type="text" name="attributeid" id="attributeid" required="required">
+*
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

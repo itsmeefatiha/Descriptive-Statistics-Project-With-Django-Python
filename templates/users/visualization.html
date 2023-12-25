@@ -1,0 +1,183 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container ml-5 mt-5 " style="padding:0 10px">
+<div class="row row-cols-1 row-cols-md-2 g-4 col-lg-11 mb-4 "style="margin-left:60px">
+<div class="col" >
+<div class="card border border-light    " style="width: 500px; height:320px;  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;">
+  <div class="card-body">
+      <h5 class="card-title"> Graphique linéaire</h5>
+      <canvas id="line-chart"></canvas>
+      <h6> <a href="line_chart" style="margin-left:370px; text-decoration:none ; " > <strong> Génerer <svg xmlns="http://www.w3.org/2000/svg" width="15" height="20" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+      </svg></strong> </a></h6>
+  </div>
+</div>
+</div>
+<div class="col">
+    <div class="card border border-light " style="width: 500px; height:320px;; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;">
+      <div class="card-body">
+          <h5 class="card-title">Graphique en barres horizontal</h5>
+          <canvas id="population-chart"></canvas>
+          <h6> <a href="test" style="margin-left:370px; text-decoration:none ; " > <strong> Génerer <svg xmlns="http://www.w3.org/2000/svg" width="15" height="20" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+          </svg></strong> </a></h6>
+      </div>
+    </div>
+    </div>
+    <div class="col">
+        <div class="card border border-light  " style="width: 500px; height:320px; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;">
+          <div class="card-body">
+              <h5 class="card-title">Doughnut graphique</h5>
+              <canvas id="age-chart"></canvas>
+              <h6> <a href="pie_chart" style="margin-left:370px; text-decoration:none ; " > <strong> Génerer <svg xmlns="http://www.w3.org/2000/svg" width="15" height="20" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+              </svg></strong> </a></h6>
+          </div>
+        </div>
+        </div>
+        <div class="col">
+            <div class="card border border-light  " style="width: 500px; height:320px; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;">
+              <div class="card-body">
+                  <h5 class="card-title">Graphique en barres verticales</h5>
+                  <canvas id="bar-chart"></canvas>
+                  <h6> <a href="test" style="margin-left:370px; text-decoration:none ; " > <strong> Génerer <svg xmlns="http://www.w3.org/2000/svg" width="15" height="20" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                  </svg></strong> </a></h6>
+              </div>
+            </div>
+            </div>
+</div>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+<script>
+
+  var ctx = document.getElementById('bar-chart').getContext('2d');
+  var myChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+          labels: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin'],
+          datasets: [{
+              label: 'Ventes mensuelles',
+              data: [12, 19, 3, 5, 2, 3],
+              backgroundColor: [
+                  'rgba(255, 99, 132, 0.2)',
+                  'rgba(54, 162, 235, 0.2)',
+                  'rgba(255, 206, 86, 0.2)',
+                  'rgba(75, 192, 192, 0.2)',
+                  'rgba(153, 102, 255, 0.2)',
+                  'rgba(255, 159, 64, 0.2)'
+              ],
+              borderColor: [
+                  'rgba(255, 99, 132, 1)',
+                  'rgba(54, 162, 235, 1)',
+                  'rgba(255, 206, 86, 1)',
+                  'rgba(75, 192, 192, 1)',
+                  'rgba(153, 102, 255, 1)',
+                  'rgba(255, 159, 64, 1)'
+              ],
+              borderWidth: 1
+          }]
+      },
+      options: {
+          scales: {
+              y: {
+                  beginAtZero: true
+              }
+          }
+      }
+  });
+
+
+  var ctx = document.getElementById('population-chart').getContext('2d');
+  var populationData = {
+      labels: ["2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020"],
+      datasets: [{
+          label: 'Population',
+          data: [500, 520, 540, 560, 580, 600, 620, 640, 660, 680, 700],
+          backgroundColor: 'rgba(255, 99, 132, 0.5)',
+          borderColor: 'rgba(255, 99, 132, 1)',
+          borderWidth: 1
+      }]
+  };
+
+  var options = {
+      scales: {
+          yAxes: [{
+              ticks: {
+                  beginAtZero: true
+              }
+          }]
+      }
+  };
+
+  var populationChart = new Chart(ctx, {
+      type: 'horizontalBar',
+      data: populationData,
+      options: options
+  });
+
+
+  var ageCtx = document.getElementById('age-chart').getContext('2d');
+  var ageData = {
+      labels: ['Under 18', '18-35', '35-50', 'Over 50'],
+      datasets: [{
+          label: 'Age Distribution',
+          data: [20, 40, 30, 10],
+          backgroundColor: [
+              'rgba(255, 206, 86, 0.5)',
+              'rgba(54, 162, 235, 0.5)',
+              'rgba(255, 99, 132, 0.5)',
+              'rgba(75, 192, 192, 0.5)'
+          ],
+          borderColor: [
+              'rgba(255, 206, 86, 1)',
+              'rgba(54, 162, 235, 1)',
+              'rgba(255, 99, 132, 1)',
+              'rgba(75, 192, 192, 1)'
+          ],
+          borderWidth: 1
+      }]
+  };
+  var ageChart = new Chart(ageCtx, {
+      type: 'doughnut',
+      data: ageData
+  });
+
+
+  
+
+
+  
+  var ctx = document.getElementById('line-chart').getContext('2d');
+  var myChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+          labels: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin'],
+          datasets: [{
+              label: 'Ventes mensuelles',
+              data: [12, 19, 3, 5, 2, 3],
+              fill: false,
+              borderColor: [
+                  'rgb(75, 192, 192)',
+                  
+              ],
+              borderWidth: 1
+          }]
+      },
+      options: {
+          scales: {
+              y: {
+                  beginAtZero: true
+              }
+          }
+      }
+  });
+
+  
+</script>
+
+{% endblock content %}

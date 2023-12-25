@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %} 
+<div class="column mt-5" style="padding:0 20px ; margin-left:10px">
+    <div class="container">
+        <div class="row">
+          <div class="col-12 col-sm-8 col-md-6 col-lg-13">
+            <div class="card border border-light " style='width:900px; height:500px; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;'>
+              <div class="card-header">
+                <ul class="nav nav-tabs card-header-tabs" id="bologna-list" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active " href="#Resultat" role="tab" aria-controls="moyenne" aria-selected="True"><strong>Résultat</strong></a>
+                      </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#covariance" role="tab" aria-controls="covariance" aria-selected="false"><strong> Covariance</strong></a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#correlation" role="tab" aria-controls="correlation" aria-selected="false"><strong> Correlation</strong></a>
+                      </li>  
+                    </ul>
+                </div>
+                <div class="card-body mt-2">
+             
+            
+                    <div class="tab-content mt-3">
+                     <div class="tab-pane active " id="Resultat" role="tabpanel" >  
+                       <p class="card-text">
+                           
+                          
+                           {%if error_message%}
+                           <div class="alert alert-danger" role="alert">
+                            {{ error_message }}
+                          </div>
+                           
+                           {% endif %}
+                           <br/><br/><br/>
+                           <h4 >   <font style="color:#ff695f">Voici  </font>  votre résultat de calcule : </h4>
+                       
+                     </div>
+                     <div class="tab-pane" id="covariance" role="tabpanel" aria-labelledby="deals-tab">
+                        <p class="card-text">
+                            <form method="POST" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <h4 > Calculer <font style="color:#ff695f"> la Covariance </font> </h4>
+                                <label for="selected_column"><h6>Selectionner une colonne pour calculer la Covariance : </h6> </label><br/>
+                                <h6> <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                  <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                                  <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                                </svg>  colonne 1 : &nbsp;<input type="input-group-text" name="column_x" ></h6> <br/>
+                                <h6> <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                    <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                                    <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                                  </svg>  colonne 2 : &nbsp;<input type="input-group-text" name="column_y" ><button type="submit" class="btn btn-outline-secondary" style=" margin-left:40px; height:35px; weight:30px; color:#ff695f" name="selected_calculation" value="covariance">calculer</button></h6> 
+                               </form></p>
+                        
+                      </div>
+        
+        
+                      <div class="tab-pane" id="correlation" role="tabpanel" aria-labelledby="deals-tab">
+                        <p class="card-text">
+                            <form method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <h4 > Calculer <font style="color:#ff695f"> la Correlation </font> </h4>
+                            <label for="selected_column"><h6>Selectionner une colonne pour calculer la Correlation:</h6> </label><br/>
+                            <h6> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                              <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                              <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                            </svg>  colonne 1 : &nbsp;<input type="input-group-text" name="column_x" ></h6> <br/>
+                            <h6> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                                <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                              </svg>  colonne 2 : &nbsp;<input type="input-group-text" name="column_y" ><button type="submit" class="btn btn-outline-secondary" style=" margin-left:40px; height:35px; weight:30px; color:#ff695f" name="selected_calculation" value="correlation">calculer</button></h6> 
+                           </form></p>
+                      </div>
+                    </div>
+            
+          
+                    <div class="box mx-auto " style="height:165px; width:300px">
+                     
+                      <p> la 1ère colonne séléctionnée: {{ column_x }}</p>
+                      <p> la 2ème colonne séléctionnée: {{ column_y }}</p>
+                      <p>Indicateur choisie : {{ selected_calculation }}</p>
+                      <p>Resultat: {{ result }}</p></div><br/>
+                      <h6> <a onclick="history.back()" style="margin-left:10px"> <strong><svg xmlns="http://www.w3.org/2000/svg" width="40" height="20" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+                         
+                      </svg> Retour
+
+                     </strong> 
+                     </a>
+                   </h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> 
+            {% endblock content %}

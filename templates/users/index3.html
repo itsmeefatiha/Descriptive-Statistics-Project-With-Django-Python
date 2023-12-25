@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+{% include 'partials/_messages.html' %}
+  
+<div class="column mt-5" style="padding:0 10px"> 
+  <div class="row row-cols-1 row-cols-md-2 g-3"style="margin-left:50px">
+    <div class="col">
+      <div class="card border border-light shadow-20 mb-3 "  style="width: 400px; height:300px; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;"><br/>
+        <img src="../static/img/images.png" class="card-img-top"style="width: 150px; height:110px;" alt="Fissure in Sandstone"/>
+
+        <div class="card-body">
+          <h5 class="card-title">Fichier CSV</h5><br/>
+          <p class="card-text">Choisisez votre fichier <strong><font style="color:#ff695f">CSV </font></strong> pour l'importer </p>
+         
+          <a href="upload-file"class="btn btn-outline-secondary" style="color:#03a4ed"><strong>Importer</strong></a>
+        </div>
+      </div>
+    
+</div>
+<div class="col">
+  <div class="card border border-light shadow-20 mb-3 "  style="width: 400px; height:300px; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;"><br/>
+    <img src="../static/img/excel2.png" class="card-img-top"style="width: 100px; height:100px; margin-left:25px" alt="Fissure in Sandstone"/>
+
+    <div class="card-body">
+      <h5 class="card-title"> Fichier Excel </h5><br/>
+      <p class="card-text">Choisisez votre fichier <strong><font style="color:#ff695f">EXCEL </font></strong> pour l'importer</p>
+     
+      <a href="upload-file"class="btn btn-outline-secondary" style="color:#ff695f"> <strong>Importer </strong></a>
+    </div>
+  </div>
+
+</div>
+
+
+<div class="col">
+  <div class="card border border-light shadow-20 mb-3 "  style="width: 400px; height:300px; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;"><br/>
+    <img src="../static/img/json2.png" class="card-img-top"style="width: 100px; height:100px; margin-left:25px" alt="Fissure in Sandstone"/>
+
+    <div class="card-body">
+      <h5 class="card-title">Fichier JSON</h5><br/>
+     <p class="card-text">Choisisez votre fichier <strong><font style="color:#ff695f">JSON </font></strong>pour l'importer</p>
+     
+      <a href="upload-file"class="btn btn-outline-secondary" style="color:#ff695f"><strong>Importer</strong></a>
+    </div>
+  </div>
+
+</div>
+
+
+
+<div class="col">
+  <div class="card border border-light shadow-20 mb-3 "  style="width: 400px; height:300px; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;"><br/>
+    <img src="../static/img/xml.png" class="card-img-top"style="width: 100px; height:100px; margin-left:20px" alt="Fissure in Sandstone"/>
+
+    <div class="card-body">
+      <h5 class="card-title">Fichier XML</h5><br/>
+      <p class="card-text">Choisisez votre fichier <strong><font style="color:#ff695f">XML </font></strong> pour l'importer</p>
+     
+      <a href="upload-file"class="btn btn-outline-secondary" style="color:#03a4ed"> <strong>Importer</strong></a>
+    </div>
+  </div>
+
+</div>
+</div>
+</div>
+  
+
+  {% endblock %}

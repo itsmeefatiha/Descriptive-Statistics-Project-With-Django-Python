@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Imported Data</title>
+</head>
+<body>
+	<h1>Imported Data</h1>
+
+  <h2>Data</h2>
+  <table>
+    <thead>
+      <tr>
+        {% for col in header %}
+          <th>{{ col }}</th>
+        {% endfor %}
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in data %}
+        <tr>
+          {% for val in row %}
+            <td>{{ val }}</td>
+          {% endfor %}
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  {% if averages %}
+    <h2>Averages</h2>
+    <ul>
+      {% for col, avg in zip(selected_columns, averages) %}
+        <li>{{ col }}: {{ avg }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+
+
+
+
+
+
+

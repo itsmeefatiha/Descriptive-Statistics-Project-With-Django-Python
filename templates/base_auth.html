@@ -1,0 +1,38 @@
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Analytics  {% block title %}
+    {% endblock %}   </title>
+    <!-- Bootstrap core CSS -->
+<link href="{% static 'css/bootstrap.min.css'%}" rel="stylesheet">
+<link href="{% static 'css/main.css'%}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/dashboard1.css' %}" rel="stylesheet">
+  </head>
+  <body>
+    
+    <div class="retour">
+      <a href="{% url 'home' %}"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-return-left" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z"/>
+        </svg></a></div>
+    <main role="main">
+
+
+
+      {% block content %}
+
+      {% endblock %}
+
+
+    </main>
+  </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+      <script>window.jQuery || document.write('<script src="/docs/4.4/static/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="/docs/4.4/dist/js/bootstrap.bundle.min.js" integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+        <script src="{% static 'js/main.js' %}"></script></body>
+</html>

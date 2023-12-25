@@ -1,0 +1,72 @@
+{% extends 'base_auth.html' %}
+{% load static %}
+
+
+{% block content %}
+<br/><br/><br/><br/><br/>
+<div class="row">
+  <div class="col-md-4"></div>
+  <div class="col-md-4">
+    <div class="card border border-light shadow-20 "  style="width: 400px; height:600px; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; border-radius: 20px;"><br/>
+
+      <div class="card-body">
+        <div class="card-title py-3">
+          <h4><center><font color="#ff695f"><strong>Sign Up</strong></font></h4></center>
+        </div>
+        <form action="{% url 'register' %}" method="post">
+          {% csrf_token %}
+
+          {% include 'partials/_messages.html' %}
+          <div class="form-group">
+           <fieldset> <input
+              type="text"
+              name="username"
+              placeholder="Nom"
+              id="usernameField"
+              value="{{fieldValues.username}}"
+              
+            /></fieldset>
+          </div>
+          <div class="invalid_feedback invalid-feedback" style="display:none">
+          </div>
+          <p class="text-sm text-success usernameSuccessOutput"></p>
+          <div class="form-group">
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              class="form-control form-control-sm"
+              id="emailField"
+
+              value="{{fieldValues.email}}"
+            />
+          </div>
+
+          <div class="emailFeedBackArea invalid-feedback" style="display:none">
+          </div>
+          <div class="form-group">
+            <input
+              type="password"
+              name="password"
+              placeholder="Mot de Passe"
+              class="form-control form-control-sm"
+              id="passwordField"
+            />
+            <small class="float-right py-3 showPasswordToggle">SHOW</small>
+          </div><br/>
+          <a href="login"style="color: #03a4ed; text-decoration: none;"><center>login if you have already an account </center></a><br/>
+          <div class="main-red-button-hover">
+          <center><input type="submit" value="Register" style="border-radius: 20px; border-width: 0cm;"/></center></div>
+        </form>
+
+      </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4"></div>
+</div>
+
+<script src="{% static 'js/register.js' %}"></script>
+
+{% endblock content %}

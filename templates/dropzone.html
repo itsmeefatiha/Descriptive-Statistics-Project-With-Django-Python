@@ -1,0 +1,35 @@
+
+
+{% load static %}
+{% block scripts  %}
+<link rel="stylesheet" href="{% static 'dropzone.css' %}">
+<script src="{% static 'dropzone.js' %}" defer></script>
+
+<script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
+<script src="" defer></script>
+{% endblock scripts  %}
+{% block title %}
+upload sales files 
+{% endblock title  %}
+{% block content %}
+<h5> upload your documents </h5>
+<form id="my-dropzone"  class="dropzone dz">
+    {% csrf_token %}
+    <div  class="fallback">
+        <input name="file" type="file" multiple />
+    </div>
+  </form>
+  <body>
+    <table>
+      {% for row in data %}
+      <tr>
+        {% for cell in row %}
+        <td>{{ cell }}</td>
+        {% endfor %}
+      </tr>
+      {% endfor %}
+    </table>
+  </body>
+{% endblock content  %}
+

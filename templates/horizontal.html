@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Bar Chart</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style type="text/css">
+body{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    position: absolute;
+    text-align:justify;
+}
+center{
+    text-align: center;
+}
+h1{
+    color: #ff695f;
+}
+.chartbox {
+    width: 15cm;
+    height: 7cm;
+
+    
+}
+.retour {
+    position: fixed;
+}
+.retour a {
+  display: inline-block;
+  font-size: 2px;
+  font-weight: 100;
+  color: #ff695f;
+  text-transform: capitalize;
+  padding: 12px 25px;
+  border-radius: 0px;
+  letter-spacing: 0.25px;
+}
+
+.retour a {
+  display: inline-block;
+  font-size: 2px;
+  font-weight: 100;
+  color: #ff695f;
+  text-transform: capitalize;
+  padding: 12px 25px;
+  border-radius: 0px;
+  letter-spacing: 0.25px;
+  transition: all .3s;
+}
+
+.section-heading  h2 {
+ color: #ff695f;
+ padding-top: 1cm;
+}
+.section-heading  span {
+ color: #03a4ed;
+ padding-top: 1cm;
+}
+
+.section-heading  p {
+ text-align: justify;
+ padding-left: 2cm;
+ padding-right: 2cm;
+}
+</style>
+  </head>
+
+  <body>
+    <div class="retour">
+    <a onclick="history.back()"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="30" fill="currentColor" class="bi bi-arrow-return-left" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z"/>
+      </svg></a></div>
+      
+      <div class="section-heading">
+ <center><h2 >graphique<span> à</span> barres horizontales</h2>
+<p>Un horizontal bar chart est un type de graphique à barres qui affiche les données sous forme de barres horizontales plutôt que verticales. Il est souvent utilisé pour comparer des données dans différentes catégories, telles que les ventes de produits ou les performances de différents employés.</p>
+<br/><div class="chartbox" style='margin-left: 500px;'>
+    <canvas id="horizontal"></canvas></div>
+
+    <script>
+      var ctx = document.getElementById('horizontal').getContext('2d');
+    var horizontalBarChart = new Chart(ctx, {
+    type: 'horizontalBar',
+    data: {
+        labels: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin'],
+        datasets: [{
+            label: 'Ventes',
+            data: [120, 200, 180, 250, 300, 280],
+            backgroundColor: 'rgba(54, 162, 235, 0.5)',
+            borderColor: 'rgba(54, 162, 235, 1)',
+            borderWidth: 1
+        }]
+    },
+    options: {
+        responsive: true,
+        scales: {
+            xAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+    <h2>Création <span>d'un graphique</span> à barres horizontales</h2>
+    
+   <p> La création d'un horizontal bar graph peut se faire avec l'utilisation d'une bibliothèque de visualisation de données comme Chart.js. Les données doivent être formatées dans un tableau, avec les labels pour chaque catégorie et les valeurs correspondantes. Ensuite, il suffit de définir les options de personnalisation du graphique, telles que le titre, la couleur, la taille, etc.</p>
+<h2>Interprétation d'un <span>graphique à </span>barres horizontales</h2>
+    <p>
+        L'interprétation d'un horizontal bar graph est similaire à celle d'un graphique à barres vertical, en ce sens que les hauteurs des barres représentent les valeurs des données. Cependant, la présentation horizontale peut faciliter la comparaison des données entre différentes catégories et faciliter la lecture des labels des catégories.
+    </p>
+   <h2>Conclusion</h2> 
+    <p>
+        En conclusion, les horizontal bar charts sont un moyen efficace de visualiser et de comparer les données dans différentes catégories. Ils sont particulièrement utiles lorsque les labels de catégories sont longs et que la présentation horizontale permet de les afficher plus clairement. Bien que la création de ces graphiques puisse nécessiter une certaine expérience en matière de visualisation de données et de programmation, l'utilisation de bibliothèques de visualisation de données telles que Chart.js facilite grandement la création de ces graphiques.</p>
+  </p></center>
+</div>
+  </body>
+</html>

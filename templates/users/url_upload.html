@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+<div class="column mt-5" style="padding:0 10px">
+<div class="card border border-light shadow-20 mb-3" style="max-width: 70% ; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;margin-left:100px;">
+    <div class="card-header">url upload</div>
+    <div class="card-body text-dark">
+      <h3 class="card-title"> <font style="color:#ff695f">Importer </font>votre fichier maintenant !</h3> </br>
+                    <form method="post" enctype="multipart/form-data">
+                      {% csrf_token %}
+                      <div class="row content">
+                        <div class="col"> 
+                            <h5>Entrer votre fichier ici : <input type="text" name="csv_url" id="csv_url">
+                            <button type="submit" class="btn btn-outline-secondary"style="color:#ff695f;"><strong>Importer</strong></button></h5></br></br>
+                        <h6> <a href="upload-file" style=" text-decoration:none ; " > <strong><svg xmlns="http://www.w3.org/2000/svg" width="40" height="20" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+                          </svg> Importation basique </strong> </a></h6> 
+                      </div>
+                    </div>
+             </form>
+            </div>
+            </div>
+        </div>
+{% endblock content %}

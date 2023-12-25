@@ -1,0 +1,17 @@
+
+  <h2>Select columns to calculate averages</h2>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {% for col in header %}
+      <div>
+        <label>
+          <input type="checkbox" id="columns" name="columns" value="{{ col }}">
+          {{ col }}
+        </label>
+      </div>
+    {% endfor %}
+    <div>
+      <button type="submit">Calculate Averages</button>
+    </div>
+  </form>
+

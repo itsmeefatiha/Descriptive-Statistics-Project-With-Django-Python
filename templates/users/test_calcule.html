@@ -1,0 +1,247 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %} 
+
+<div class="column mt-5" style="padding:10 20px ; margin-left:60px">
+
+
+
+
+      <div class="col-12 col-sm-8 col-md-6 col-lg-13">
+        <div class="card border border-light " style='width:1100px; height:500px; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;'>
+          <div class="card-header">
+            <ul class="nav nav-tabs card-header-tabs" id="bologna-list" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active "  href="#Resultat" role="tab" aria-controls="moyenne" aria-selected="True"><strong>Résultat</strong></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link "  href="#moyenne" role="tab" aria-controls="moyenne" aria-selected="True"><strong>Moyenne</strong></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link"  href="#mode" role="tab" aria-controls="mode" aria-selected="false"><strong>Mode</strong></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#median" role="tab" aria-controls="median" aria-selected="false"><strong>Median</strong></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#Minimum" role="tab" aria-controls="Minimum" aria-selected="false"><strong>Minimum</strong></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#Maximum" role="tab" aria-controls="Maximum" aria-selected="false"><strong>Maximum </strong></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#range" role="tab" aria-controls="range" aria-selected="false"><strong>L'étendue </strong></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#lécart_type" role="tab" aria-controls="lécart_type" aria-selected="false"><strong>l'écart type</strong></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#variance" role="tab" aria-controls="variance" aria-selected="false"><strong>Variance </strong></a>
+              </li>
+              
+              <li class="nav-item">
+                <a class="nav-link" href="#lasomme" role="tab" aria-controls="lasomme" aria-selected="false"><strong> Somme</strong></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#quartiles" role="tab" aria-controls="quartiles" aria-selected="false"><strong>l'écart interquartile</strong></a>
+              </li>
+            </ul>
+          </div>
+          <div class="card-body mt-2">
+             
+            
+             <div class="tab-content mt-3">
+              <div class="tab-pane active " id="Resultat" role="tabpanel" >  
+                <p class="card-text">
+                    
+                   
+                    {%if error_message%}
+                    <div class="alert alert-danger" role="alert">
+                     {{ error_message }}
+                   </div>
+                    
+                    {% endif %}
+                    <br/>
+                    <h4 >   <font style="color:#ff695f">Voici  </font>  votre résultat de calcule : </h4>
+                
+              </div>
+              
+              <div class="tab-pane  " id="moyenne" role="tabpanel" aria-labelledby="history-tab">  
+                <p class="card-text">
+                    <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <h4 > Calculer <font style="color:#ff695f"> la moyenne</font> </h4>
+                  <label for="selected_column"><h6>Selectionner une colonne pour calculer la moyenne :</h6></label><br/>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                    <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                    <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                  </svg>   
+                <input type="input-group-text" name="column_name" >
+                <button type="submit" class="btn btn-outline-secondary" style=" margin-left:20px; height:35px; weight:30px; color:#ff695f" name="selected_calculation" value="mean">calculer</button>
+                 </form>
+                
+              </div>
+               
+              <div class="tab-pane " id="mode" role="tabpanel" aria-labelledby="history-tab">  
+                <p class="card-text">
+                    <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <h4 > Calculer <font style="color:#ff695f"> le mode</font> </h4>
+                  <label for="selected_column"><h6>Selectionner une colonne pour calculer le mode :</h6></label><br/>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                    <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                    <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                  </svg>   
+                <input type="input-group-text" name="column_name" >
+                <button type="submit" class="btn btn-outline-secondary" style=" margin-left:20px; height:35px; weight:30px; color:#ff695f" name="selected_calculation" value="mode">calculer</button>
+                 </form>
+                 
+              </div>
+               
+              <div class="tab-pane" id="median" role="tabpanel" aria-labelledby="deals-tab">
+                <p class="card-text">
+                    <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <h4 > Calculer <font style="color:#ff695f">la median </font> </h4>
+                  <label for="selected_column"><h6>Selectionner une colonne pour calculer la median:</h6> </label><br/>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                    <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                    <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                  </svg>   
+                <input type="input-group-text" name="column_name" >
+                <button type="submit" class="btn btn-outline-secondary" style=" margin-left:20px; height:35px; weight:30px; color:#ff695f" name="selected_calculation" value="median">calculer</button>
+                 </form>
+                 
+                
+              </div>
+              <div class="tab-pane" id="Minimum" role="tabpanel" aria-labelledby="history-tab">  
+                <p class="card-text">
+                    <form method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <h4 > Afficher <font style="color:#ff695f">le Minimum </font> </h4>
+                      <label for="selected_column"><h6>Selectionner une colonne pour trouver sa valeur min :</h6></label><br/>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                        <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                        <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                      </svg>   
+                    <input type="input-group-text" name="column_name" >
+                    <button type="submit" class="btn btn-outline-secondary" style=" margin-left:20px; height:35px; weight:30px; color:#ff695f" name="selected_calculation" value="min">calculer</button>
+                     </form>
+                     
+              </div>
+              <div class="tab-pane" id="Maximum" role="tabpanel" aria-labelledby="deals-tab">
+                <p class="card-text">
+                    <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <h4 > Afficher <font style="color:#ff695f">le Maximum </font> </h4>
+                  <label for="selected_column"><h6>Selectionner une colonne pour trouver sa valeur max:</h6></label><br/>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                    <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                    <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                  </svg>   
+                <input type="input-group-text" name="column_name" >
+                <button type="submit" class="btn btn-outline-secondary" style=" margin-left:20px; height:35px; weight:30px; color:#ff695f" name="selected_calculation" value="max">calculer</button>
+                 </form>
+                 
+              </div>
+              <div class="tab-pane" id="range" role="tabpanel" aria-labelledby="deals-tab">
+                <p class="card-text">
+                    <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <h4 > Calculer <font style="color:#ff695f">l'étendue </font> </h4>
+                  <label for="selected_column"><h6>Selectionner une colonne pour calculer l'étendue:</h6> </label><br/>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                    <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                    <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                  </svg>   
+                <input type="input-group-text" name="column_name" >
+                <button type="submit" class="btn btn-outline-secondary" style=" margin-left:20px; height:35px; weight:30px; color:#ff695f" name="selected_calculation" value="range">calculer</button>
+                 </form>
+                 
+                
+              </div>
+              
+              <div class="tab-pane" id="lécart_type" role="tabpanel" aria-labelledby="deals-tab">
+                <p class="card-text">
+                    <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <h4 > Calculer <font style="color:#ff695f"> l'écart_type </font> </h4>
+                  <label for="selected_column"><h6>Selectionner une colonne pour calculer l'écart_type : </h6></label><br/>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                      <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                      <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                    </svg>   
+                  <input type="input-group-text" name="column_name" >
+                  <button type="submit" class="btn btn-outline-secondary" style=" margin-left:20px; height:35px; weight:30px; color:#ff695f" name="selected_calculation" value="lécart_type">calculer</button>
+                   </form>
+                   
+                
+              </div>
+              
+
+             
+              <div class="tab-pane" id="variance" role="tabpanel" aria-labelledby="deals-tab">
+                <p class="card-text">
+                    <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <h4 > Calculer <font style="color:#ff695f"> la variance </font> </h4>
+                  <label for="selected_column"><h6>Selectionner une colonne pour calculer la variance : </h6></label><br/>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                    <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                    <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                  </svg>   
+                <input type="input-group-text" name="column_name" >
+                <button type="submit" class="btn btn-outline-secondary" style=" margin-left:20px; height:35px; weight:30px; color:#ff695f" name="selected_calculation" value="variance">calculer</button>
+                 </form>
+                 
+                
+              </div>
+              <div class="tab-pane" id="lasomme" role="tabpanel" aria-labelledby="deals-tab">
+                <p class="card-text">
+                    <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <h4 > Calculer <font style="color:#ff695f"> la somme </font> </h4>
+                  <label for="selected_column"><h6>Selectionner une colonne pour calculer la somme:</h6> </label><br/>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                    <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                    <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                  </svg>   
+                <input type="input-group-text" name="column_name" >
+                <button type="submit" class="btn btn-outline-secondary" style=" margin-left:20px; height:35px; weight:30px; color:#ff695f" name="selected_calculation" value="somme">calculer</button>
+                 </form>
+                 
+                
+              </div>
+              <div class="tab-pane" id="quartiles" role="tabpanel" aria-labelledby="deals-tab">
+                <p class="card-text">
+                    <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <h4 > Calculer <font style="color:#ff695f"> l'écart interquartile </font> </h4>
+                  <label for="selected_column"><h6>Selectionner une colonne pour calculer l'écart interquartile</h6> </label><br/>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                    <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                    <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                  </svg>   
+                <input type="input-group-text" name="column_name" >
+                <button type="submit" class="btn btn-outline-secondary" style=" margin-left:20px; height:35px; weight:30px; color:#ff695f" name="selected_calculation" value="quartiles">calculer</button>
+                 </form>
+              </div>
+            </div>
+            
+            <br/>
+          <div class="box mx-auto " style=" width:300px" >
+           
+            <p>Colonne séléctionnée: {{ selected_column }}</p>
+            <p>Indicateur choisie : {{ selected_calculation }}</p>
+            <p>Resultat: {{ result }}</p></div><br/><br/><br/>
+            <h6> <a href="test" style="margin-left:1000px; text-decoration:none ; " > <strong> Plus<svg xmlns="http://www.w3.org/2000/svg" width="15" height="20" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+            </svg></strong> </a></h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</div>
+{% endblock content %}

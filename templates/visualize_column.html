@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Visualize Selected Column</h1>
+
+  <form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <label for="csv_file">Upload a CSV file:</label>
+    <input type="file" name="csv_file" accept=".csv"><br><br>
+    <label for="selected_column">Select a column to visualize:</label>
+    <select name="selected_column">
+      {% for column in df.columns %}
+        <option value="{{ column }}">{{ column }}</option>
+      {% endfor %}
+    </select>
+    <button type="submit" name="selected_calculation" value="mean">Calculate Mean</button>
+    <button type="submit" name="selected_calculation" value="count">Count Values</button>
+  </form>
+
+  {% if chart_data %}
+    <canvas id="myChart"></canvas>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+      // Get the chart data from the Django context variable
+      var chartData = {{ chart_data|safe }};
+
+      // Create the chart
+      var ctx = document.getElementById('myChart').getContext('2d');
+      var chart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: chartData.labels,
+          datasets: [{
+            label: chartData.label,
+            data: chartData.data,
+            backgroundColor: 'rgba(255, 105, 97, 0.2)',
+            borderColor: 'rgba(255, 105, 97, 1)',
+            borderWidth: 1
+          }]
+        },
+        options: {
+          responsive: true,
+          scales: {
+            yAxes: [{
+              ticks: {
+                beginAtZero: true
+              }
+            }]
+          }
+        }
+      });
+    </script>
+  {% endif %}
+{% endblock %}

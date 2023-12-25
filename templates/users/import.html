@@ -1,0 +1,52 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %} 
+
+
+<div class="column mt-5" style="padding:0 10px">
+<div class="card border border-light shadow-20 mb-3 " style="width:800px ; height:410px; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;margin-left:100px;">
+  <div class="card-header">Basic upload</div>
+  <div class="card-body text-dark"><br/>
+    <h2 class="card-title"> <font style="color:#ff695f">Uploader </font>votre fichier maintenant !</h2> 
+                  <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="row content">
+                      <div class="col"> <br>
+                        <strong> 
+                          <h5>Entrer votre fichier ici : <input type="file" name="file" ></h5>
+                          <br/>
+                      </form></strong><h5> 
+                       <p><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                        <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                        <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                      </svg>   <strong>Choisir le  nombre de lignes à afficher : <input type="number" name="num_rows"  ></strong></p>
+                       <p><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                        <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                        <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                      </svg>   <strong>Choisir le  nombre de colonnes à afficher: <input type="number" name="num_cols"></strong></p><br/>
+                      <button type="submit" class="btn btn-outline-secondary"style="color:#ff695f"><strong>Importer</button> </h5> 
+                        <h6> <a href="urlcsv" style="margin-left:580px; text-decoration:none ; " > <strong> Importation par URL<svg xmlns="http://www.w3.org/2000/svg" width="15" height="20" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                          <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                        </svg></strong> </a></h6>
+                    </div>
+                  </div>
+           </form>
+          </div>
+          </div>
+          
+      </div>
+      <!-- /.col-md-6 -->
+    </div>
+    <!-- /.row -->
+    {% if html_table %}
+    <h2>CSV data:</h2>
+    {{ html_table|safe }}
+{% endif %}
+
+<!-- /.content -->
+
+
+  </div>
+{% endblock content %}   

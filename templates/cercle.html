@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Bar Chart</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style type="text/css">
+body{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    position: absolute;
+    text-align:justify;
+}
+center{
+    text-align: center;
+}
+h1{
+    color: #ff695f;
+}
+.chartbox {
+    width: 15cm;
+    height: 7cm;
+
+    
+}
+.retour {
+    position: fixed;
+}
+.retour a {
+  display: inline-block;
+  font-size: 2px;
+  font-weight: 100;
+  color: #ff695f;
+  text-transform: capitalize;
+  padding: 12px 25px;
+  border-radius: 0px;
+  letter-spacing: 0.25px;
+}
+
+.retour a {
+  display: inline-block;
+  font-size: 2px;
+  font-weight: 100;
+  color: #ff695f;
+  text-transform: capitalize;
+  padding: 12px 25px;
+  border-radius: 0px;
+  letter-spacing: 0.25px;
+  transition: all .3s;
+}
+
+.section-heading  h2 {
+ color: #ff695f;
+ padding-top: 1cm;
+}
+.section-heading  span {
+ color: #03a4ed;
+ padding-top: 1cm;
+}
+
+.section-heading  p {
+ text-align: justify;
+ padding-left: 2cm;
+ padding-right: 2cm;
+}
+</style>
+  </head>
+
+  <body>
+    <div class="retour">
+    <a onclick="history.back()"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="30" fill="currentColor" class="bi bi-arrow-return-left" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z"/>
+      </svg></a></div>
+      
+      <div class="section-heading">
+ <center><h2 >graphique<span> en</span>  cercle</h2>
+<p>Un cercle chart est un type de graphique circulaire qui affiche les données sous forme de parts de cercle. Il est souvent utilisé pour représenter la proportion de chaque élément dans un ensemble, ou pour montrer la répartition des données dans différentes catégories.</p>
+<br/><div class="chartbox" style='margin-left: 500px;'>
+    <canvas id="myChart"></canvas></div>
+
+    <script>
+     var ctx = document.getElementById('myChart').getContext('2d');
+
+// Données
+var data = {
+    labels: ['1', '2', '3'],
+    datasets: [{
+        data: [25, 50, 25], // Les valeurs doivent correspondre à 100%
+        backgroundColor: [
+            'rgb(255, 99, 132)',
+            '#ff695f',
+            '#03a4ed'
+        ]
+    }]
+};
+
+// Options
+var options = {
+    title: {
+        display: true,
+        text: 'Répartition des données'
+    }
+};
+
+// Création du pie chart
+var myChart = new Chart(ctx, {
+    type: 'pie',
+    data: data,
+    options: options
+});
+    </script>
+    <h2>Création <span>d'un graphique</span> en cercle</h2>
+    
+   <p> La création d'un cercle graph peut se faire avec l'utilisation d'une bibliothèque de visualisation de données comme Chart.js. Les données doivent être formatées dans un tableau, avec les labels pour chaque catégorie et les valeurs correspondantes. Ensuite, il suffit de définir les options de personnalisation du graphique, telles que le titre, la couleur, la taille, etc.</p>
+<h2>Interprétation d'un <span>graphique en </span>cercle</h2>
+    <p>
+        L'interprétation d'un cercle graph se fait en évaluant la taille de chaque part de cercle par rapport au total. Le pourcentage de chaque part peut être indiqué à l'intérieur de chaque section, et les labels peuvent être placés à l'extérieur du graphique pour faciliter la lecture. Le cercle graph peut également être utilisé pour comparer les proportions entre différents ensembles de données.</p>
+   <h2>Conclusion</h2> 
+    <p>
+        En conclusion, les cercle charts sont un moyen efficace de visualiser et de comparer les proportions de différentes catégories de données. Bien qu'il puisse y avoir des problèmes de lisibilité pour les labels de sections avec de faibles proportions, un cercle graph bien conçu peut être un outil utile pour la présentation de données. La création de ces graphiques peut être facilitée par l'utilisation de bibliothèques de visualisation de données telles que Chart.js.</p>
+  </p></center>
+</div>
+  </body>
+</html>

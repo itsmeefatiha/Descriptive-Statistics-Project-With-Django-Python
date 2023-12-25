@@ -1,0 +1,43 @@
+#header {
+
+  color: #fff;
+  background-color:#ff695f;
+  text-decoration: none;
+}
+#user-tools, #logout-form button {
+  background-color: #ff695F;
+  padding: 0;
+  font-weight: 300;
+  font-size: 0.6875rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+#branding h1 {
+  color: #fff;
+}
+
+div.breadcrumbs {
+  background: #ff695f;
+  color: #ff695f;
+}
+
+.login .submit-row {
+  padding: 0px !important;
+}
+
+input[type="submit"],
+input[type="button"],
+.submit-row input {
+  width: 100%;
+  background: #ff695f;
+}
+.submit-row input:hover {
+  background: #03a4ed;
+}
+
+
+.module h2,
+.module caption,
+.inline-group h2 {
+  background: #ff695f;
+}

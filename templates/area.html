@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Bar Chart</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style type="text/css">
+body{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    position: absolute;
+    text-align:justify;
+}
+center{
+    text-align: center;
+}
+h1{
+    color: #ff695f;
+}
+.chartbox {
+    width: 15cm;
+    height: 7cm;
+
+    
+}
+.retour {
+    position: fixed;
+}
+.retour a {
+  display: inline-block;
+  font-size: 2px;
+  font-weight: 100;
+  color: #ff695f;
+  text-transform: capitalize;
+  padding: 12px 25px;
+  border-radius: 0px;
+  letter-spacing: 0.25px;
+}
+
+.retour a {
+  display: inline-block;
+  font-size: 2px;
+  font-weight: 100;
+  color: #ff695f;
+  text-transform: capitalize;
+  padding: 12px 25px;
+  border-radius: 0px;
+  letter-spacing: 0.25px;
+  transition: all .3s;
+}
+
+.section-heading  h2 {
+ color: #ff695f;
+ padding-top: 1cm;
+}
+.section-heading  span {
+ color: #03a4ed;
+ padding-top: 1cm;
+}
+
+.section-heading  p {
+ text-align: justify;
+ padding-left: 2cm;
+ padding-right: 2cm;
+}
+</style>
+  </head>
+
+  <body>
+    <div class="retour">
+    <a onclick="history.back()"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="30" fill="currentColor" class="bi bi-arrow-return-left" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z"/>
+      </svg></a></div>
+      
+      <div class="section-heading">
+ <center><h2 >graphique<span> en</span> aires</h2>
+<p>Les area graphs sont des graphiques qui représentent des données sous forme de courbes remplies, créant ainsi une zone. Les area graphs sont souvent utilisés pour représenter des données continues telles que des séries chronologiques ou des tendances sur une période donnée. Ils sont utiles pour visualiser les changements et les modèles dans les données au fil du temps.</p>
+<br/><div class="chartbox" style="margin: 0 auto;">
+    <canvas id="areaGraph"></canvas></div>
+
+    <script>
+      var data = {
+			labels: ["", "", "", "", "", "", ""],
+			datasets: [{
+				label: "Area graph",
+				backgroundColor: "rgba(255,99,132,0.2)",
+				borderColor: "#ff695f",
+				borderWidth: 1,
+				data: [65, 59, 80, 81, 56, 55, 40],
+				fill: true
+			}]
+		};
+
+		// options pour le graphique
+		var options = {
+			responsive: true,
+			title: {
+				display: true,
+				text: "Ventes Mensuelles"
+			},
+			legend: {
+				display: false
+			},
+			scales: {
+				xAxes: [{
+					display: true,
+					scaleLabel: {
+						display: true,
+						labelString: "Mois"
+					}
+				}],
+				yAxes: [{
+					display: true,
+					scaleLabel: {
+						display: true,
+						labelString: "Ventes"
+					},
+					ticks: {
+						beginAtZero: true
+					}
+				}]
+			}
+		};
+
+		// création du graphique
+		var areaGraph = new Chart(document.getElementById("areaGraph"), {
+			type: "line",
+			data: data,
+			options: options
+		});
+    </script>
+    <h2>Création <span>d'un graphique</span> en aires</h2>
+    
+   <p> Pour créer un area graph, il faut d'abord choisir les données à représenter. Ensuite, il faut définir les axes x et y et placer les données correspondantes sur le graphique. Les area graphs peuvent être créés manuellement à l'aide d'un outil de dessin ou en utilisant une bibliothèque de graphiques telle que Chart.js ou D3.js.
+    </p>
+<h2>Interprétation d'un <span>graphique en </span>aires</h2>
+    <p>
+        L'interprétation d'un area graph dépend des données représentées. En général, plus la zone est grande, plus les données sont élevées. Si deux zones se chevauchent, cela indique que les données sont similaires. Les area graphs sont également utiles pour identifier les tendances et les modèles dans les données.
+    </p>
+   <h2>Conclusion</h2> 
+    <p>
+        Les area graphs sont un outil utile pour représenter graphiquement des données continues telles que des séries chronologiques ou des tendances sur une période donnée. Ils permettent de visualiser les changements et les modèles dans les données au fil du temps. Cependant, l'interprétation des données dépend des données représentées et de la taille de chaque zone. Les area graphs doivent donc être utilisés avec prudence pour éviter toute interprétation erronée des données.</p>
+  </p></center>
+</div>
+  </body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Bar Chart</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style type="text/css">
+body{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    position: absolute;
+    text-align:justify;
+}
+center{
+    text-align: center;
+}
+h1{
+    color: #ff695f;
+}
+.chartbox {
+    width: 15cm;
+    height: 7cm;
+
+    
+}
+.retour {
+    position: fixed;
+}
+.retour a {
+  display: inline-block;
+  font-size: 2px;
+  font-weight: 100;
+  color: #ff695f;
+  text-transform: capitalize;
+  padding: 12px 25px;
+  border-radius: 0px;
+  letter-spacing: 0.25px;
+}
+
+.retour a {
+  display: inline-block;
+  font-size: 2px;
+  font-weight: 100;
+  color: #ff695f;
+  text-transform: capitalize;
+  padding: 12px 25px;
+  border-radius: 0px;
+  letter-spacing: 0.25px;
+  transition: all .3s;
+}
+
+.section-heading  h2 {
+ color: #ff695f;
+ padding-top: 1cm;
+}
+.section-heading  span {
+ color: #03a4ed;
+ padding-top: 1cm;
+}
+
+.section-heading  p {
+ text-align: justify;
+ padding-left: 2cm;
+ padding-right: 2cm;
+}
+</style>
+  </head>
+
+  <body>
+    <div class="retour">
+    <a onclick="history.back()"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="30" fill="currentColor" class="bi bi-arrow-return-left" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z"/>
+      </svg></a></div>
+      
+      <div class="section-heading">
+ <center><h2 >graphique<span> </span> radar</h2>
+<p>Les graphiques en barres sont un moyen populaire d'afficher des données sous forme graphique. Ils sont utiles pour comparer des données entre des catégories et pour montrer des tendances au fil du temps. Un graphique en barres se compose d'une série de barres qui représentent les valeurs d'un ensemble de données. Chaque barre est proportionnelle à la valeur qu'elle représente. Dans cette page de documentation, nous discuterons des bases des graphiques en barres et de la façon de les créer et de les interpréter.</p>
+<br/>&nbsp;&nbsp;&nbsp;<div class="chartbox" style='margin-left: 500px;'>
+    <canvas id="radarChart"></canvas></div>
+
+    <script>
+      var data = {
+  labels: ["", "", "", "", ""],
+  datasets: [{
+    label: "Radar Chart",
+    backgroundColor: "rgba(255,99,132,0.2)",
+    borderColor: "#ff695f",
+    pointBackgroundColor: "#ff695f",
+    pointBorderColor: "#fff",
+    pointHoverBackgroundColor: "#fff",
+    pointHoverBorderColor: "#ff695f",
+    data: [65, 59, 90, 81, 56]
+  }]
+};
+
+// options pour le graphique radar
+var options = {
+  scale: {
+    ticks: {
+      beginAtZero: true
+    }
+  }
+};
+
+// création du graphique radar
+var radarChart = new Chart(document.getElementById("radarChart"), {
+  type: 'radar',
+  data: data,
+  options: options
+});
+    </script>
+    <h2>Création <span>d'un graphique</span> radar</h2>
+    
+   <p> Pour créer un radar graph, il faut d'abord choisir les données à représenter et les dimensions correspondantes. Ensuite, il faut placer chaque dimension sur un axe radial et placer les données correspondantes sur le bord du polygone. Une fois que toutes les données ont été placées, il suffit de relier les différents points pour obtenir le polygone final.
+    </p>
+<h2>Interprétation d'un <span>graphique </span>radar</h2>
+    <p>
+        L'interprétation d'un radar graph dépend des données représentées. En général, plus un polygone est grand, plus les données correspondantes sont élevées. Si deux polygones se chevauchent, cela indique que les données correspondantes sont similaires. En revanche, si un polygone est plus petit que les autres, cela indique que les données correspondantes sont plus faibles. Les radar graphs sont également utiles pour identifier les tendances et les modèles dans les données.
+    </p>
+   <h2>Conclusion</h2> 
+    <p>
+        Les radar graphs sont un outil utile pour représenter graphiquement des données multidimensionnelles. Ils permettent de visualiser les différences entre plusieurs séries de données et de mettre en évidence les points forts et les faiblesses de chaque série. Cependant, l'interprétation des données dépend des données représentées et de la taille de chaque polygone. Les radar graphs doivent donc être utilisés avec prudence pour éviter toute interprétation erronée des données.</p>
+  </p></center>
+</div>
+  </body>
+</html>
